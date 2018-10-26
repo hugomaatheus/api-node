@@ -7,14 +7,16 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "express-session": "^1.15.6"
+    "express-session": "^1.15.6",
+    "mongoose": "^5.3.7",
+    "require-dir": "^1.1.0"
   },
   "name": "api-node",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -e js,json,njk",
+    "start": "nodemon -e js,json,njk"
   },
   "keywords": [],
   "author": "",
