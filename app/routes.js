@@ -20,6 +20,12 @@ routes.post('/signup', controllers.authController.signup);
  */
 routes.use(authMiddleware);
 
+/**
+ * Tweets
+ */
+routes.post('/tweets', controllers.tweetController.create);
+routes.delete('/tweets/:id', controllers.tweetController.destroy);
+
 routes.get('/tweets', (req, res) => {
   console.log(req.userId);
 
