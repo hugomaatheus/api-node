@@ -21,6 +21,12 @@ routes.post('/signup', controllers.authController.signup);
 routes.use(authMiddleware);
 
 /**
+ * Users
+ */
+routes.put('/users', controllers.userController.update);
+
+
+/**
  * Tweets
  */
 routes.post('/tweets', controllers.tweetController.create);
