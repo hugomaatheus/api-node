@@ -25,6 +25,12 @@ routes.use(authMiddleware);
  */
 routes.put('/users', controllers.userController.update);
 
+/**
+ * Follows
+ */
+routes.post('/follow/:id', controllers.followController.create);
+routes.delete('/unfollow/:id', controllers.followController.destroy);
+
 
 /**
  * Tweets
