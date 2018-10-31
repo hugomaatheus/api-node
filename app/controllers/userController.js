@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const sendmail = require('../services/mailer');
 
 const User = mongoose.model('User');
 const Tweet = mongoose.model('Tweet');
@@ -42,8 +43,8 @@ module.exports = {
       const id = req.userId;
 
       const {
- name, username, password, confirmPassword 
-} = req.body;
+        name, username, password, confirmPassword,
+      } = req.body;
 
       if (password && password !== confirmPassword) {
         return res.status(400).json({ error: 'Password doesn\'t match!' });
