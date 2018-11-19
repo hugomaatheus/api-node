@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --timeout 12000 __tests__/**/*.test.js --exit",
+    "test": "NODE_ENV=test nyc mocha --timeout 12000 __tests__/**/*.test.js --exit",
     "start": "nodemon index.js"
   },
   "keywords": [],
@@ -36,6 +36,15 @@
     "mocha": "^5.2.0",
     "node-mocks-http": "^1.7.3",
     "nodemon": "^1.18.4",
+    "nyc": "^13.1.0",
     "sinon": "^7.1.1"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text-summary",
+      "html"
+    ],
+    "report-dir": "./__tests__/coverage"
   }
 }
