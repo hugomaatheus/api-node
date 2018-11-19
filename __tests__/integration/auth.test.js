@@ -9,6 +9,7 @@ const { expect } = chai;
 chai.use(chaiHttp);
 
 const app = require('../../index');
+const factory = require('../factories');
 
 const User = mongoose.model('User');
 
@@ -19,10 +20,7 @@ describe('Authentication', () => {
 
   describe('Sign in', () => {
     it('it should be fucking able to authenticate with valid credentials, do you feel me?', async () => {
-      const user = await User.create({
-        name: 'Hugo Matheus',
-        username: 'hbg',
-        email: 'hbgcorp@tech.com',
+      const user = await factory.create('User', {
         password: 'batman123',
       });
 
@@ -44,11 +42,8 @@ describe('Authentication', () => {
     });
 
     it('it should be fucking able to authenticate with valid credentials, do you feel me?', async () => {
-      const user = await User.create({
-        name: 'Hugo Matheus',
-        username: 'hbg',
-        email: 'hbgcorp@tech.com',
-        password: 'batman123',
+      const user = await factory.create('User', {
+        password: 'batman123'
       });
 
       const response = await chai.request(app)
